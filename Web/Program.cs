@@ -5,7 +5,6 @@ using Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Http.Resilience;
 using Polly;
-using Web.Jobs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,9 +39,6 @@ builder.Services.Configure<FileLoaderOptions>(builder.Configuration.GetSection("
 builder.Services.AddScoped<IFileLoader, FileLoader>();
 builder.Services.AddScoped<IUnzipper, Unzipper>();
 builder.Services.AddScoped<FileManager>();
-
-builder.Services.AddHostedService<ResumableJob>();
-
 
 var app = builder.Build();
 
