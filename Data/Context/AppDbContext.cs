@@ -6,7 +6,6 @@ namespace Data.Context;
 public class AppDbContext : DbContext
 {
     public DbSet<Archive> Archives { get; set; }
-    public DbSet<JobProgress> JobProgresses { get; set; }
 
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {

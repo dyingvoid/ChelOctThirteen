@@ -27,19 +27,6 @@ namespace Data.Migrations
                 {
                     table.PrimaryKey("PK_delta_archive", x => x.version_id);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "job_progress",
-                columns: table => new
-                {
-                    job_id = table.Column<string>(type: "text", nullable: false),
-                    last_checkpoint = table.Column<int>(type: "integer", nullable: false),
-                    is_complete = table.Column<bool>(type: "boolean", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_job_progress", x => x.job_id);
-                });
         }
 
         /// <inheritdoc />
@@ -47,9 +34,6 @@ namespace Data.Migrations
         {
             migrationBuilder.DropTable(
                 name: "delta_archive");
-
-            migrationBuilder.DropTable(
-                name: "job_progress");
         }
     }
 }

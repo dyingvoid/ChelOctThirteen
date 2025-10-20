@@ -58,25 +58,6 @@ namespace Data.Migrations
 
                     b.ToTable("delta_archive", (string)null);
                 });
-
-            modelBuilder.Entity("Data.Models.JobProgress", b =>
-                {
-                    b.Property<string>("JobId")
-                        .HasColumnType("text")
-                        .HasColumnName("job_id");
-
-                    b.Property<bool>("IsComplete")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_complete");
-
-                    b.Property<int>("LastCheckpoint")
-                        .HasColumnType("integer")
-                        .HasColumnName("last_checkpoint");
-
-                    b.HasKey("JobId");
-
-                    b.ToTable("job_progress", (string)null);
-                });
 #pragma warning restore 612, 618
         }
     }
